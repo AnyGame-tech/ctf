@@ -1,0 +1,122 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #1e293b, #000000);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Alert Modal */
+.alert {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+    color: #842029;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Removed animation properties */
+  }
+  
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Container */
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+h2, h3 {
+  color: #4ade80;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #ffffff; /* Changed background to white */
+  color: #000000;      /* Changed text color to black for contrast */
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Button Styles */
+.btn {
+  background: #22c55e;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #16a34a;
+}
+
+/* Message Styles */
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  animation: messageFade 0.5s forwards;
+}
+
+@keyframes messageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.error {
+  background: #f8d7da;
+  color: #842029;
+}
+
+footer {
+  margin-top: 20px;
+  color: #aaa;
+}
