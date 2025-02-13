@@ -2,33 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Text Matcher Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="ico.png" type="image/x-icon" />
+  <title>CTF Challenge: Hack the System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Custom Alert Modal (shows on page load) -->
-  <div id="alertModal" class="alert">
-    <strong>Important!</strong> Find the flag-text from the other website and paste it here to win a prize.
+  <main>
+    <div class="container">
+      <!-- Main challenge box -->
+      <div class="challenge">
+        <!-- Title (not bold) -->
+        <h1 class="animate-h1 hack-title">Hack The System</h1>
+
+        <!-- Mission Brief box with scroll -->
+        <div class="mission animate-mission">
+          <h2>Mission Brief</h2>
+          <!-- Scrollable content wrapper -->
+          <div class="mission-content">
+            <p>
+              In the shadows of cyberspace, a nefarious plan is unfolding—a masterstroke of digital subterfuge set to
+              strike on <strong>17 NOV</strong> 📅. On that fateful day, a highly orchestrated assault looms 🚨, one that
+              could plunge our interconnected world into utter chaos 🌐. The stakes have never been higher, as an insidious
+              attack threatens to cripple the very digital infrastructure that powers our lives. Yet, amid the encroaching
+              darkness, a glimmer of hope shines—a series of secret keys 🔑, meticulously hidden deep within layers of
+              seemingly ordinary data, waiting to be discovered by those bold enough to seek them.
+            </p>
+            <br>
+            <p>
+              Whispers of this impending doom circulate among the guardians of the net 🕵️‍♂️, the tireless cyber
+              sentinels who stand vigilant over our digital domain. They speak in hushed tones of an unassuming file—a
+              picture 📸 that, at first glance, appears entirely mundane. However, when examined with a discerning eye,
+              this image reveals a vital, encrypted message. This message, embedded within the pixels, is the starting
+              point of our counteroffensive—a call to action for those who dare to decipher its hidden contents.
+            </p>
+            <br>
+            <p>
+              To initiate the countermeasure, one must first unravel this clandestine signal, which is obscured by three
+              successive layers of secretive obfuscation 🌀. Each layer has been carefully crafted to mislead and
+              challenge even the most experienced code-breakers. Only by peeling back these three layers can the first
+              crucial clue emerge—a beacon of truth amid a labyrinth of deception.
+            </p>
+            <br>
+            <p>
+              Beneath digital shadows, a secret lies concealed—An enigma within an enigma, a single veil revealed. 
+              Once the first clue's unlocked, one more layer awaits: A Base64 cipher that seals your destined fates.
+              Decode this hidden message to find the keys,Not mere strings of characters, but salvation's decrees.
+              They hold the power to thwart the looming digital plight—What mystery am I, hidden in plain sight?🛡️.
+
+            </p>
+            <br>
+            <p>
+              The keys must be submitted in the precise format <strong>flag{...}</strong>, a symbolic act that signifies
+              the triumph over chaos and the reclamation of our secure future 💻. Each key represents not just a piece of
+              the puzzle, but a decisive step toward defusing the mastermind’s sinister plot and safeguarding the
+              interconnected networks that bind our modern world.
+            </p>
+            <br>
+            <p>
+              As the seconds tick away relentlessly ⏳, the urgency of the situation becomes ever more apparent. The clues,
+              though hidden in plain sight, are veiled behind layers of complexity and misdirection. Only those with the
+              sharpest insight, unyielding determination, and unwavering courage will be able to unlock these secrets in
+              time to thwart the looming cyber onslaught.
+            </p>
+            <br>
+            <p>
+              Prepare yourself for an arduous journey into the heart of digital subterfuge—a quest where every decoded
+              message brings you closer to dismantling the mastermind’s plan. The battle to safeguard our future begins
+              now, and the fate of our digital world rests in the hands of those daring enough to look beyond the surface,
+              decode the hidden layers, and secure the keys that will ultimately save us all.
+            </p>
+            <br>
+            <p>
+              <strong>Remember the date till the very end—<em>*17 NOV*</em> stands as our beacon of hope and the turning point in
+              this digital war.</strong> 🔥⏰
+            </p>
+            <!-- Tools Hints button inside the scrollable content -->
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="toolHintsButton" class="btn tool-hints-btn">Tools Hints</button>
+            <br>
+            <br>
+
+          </div>
+        </div>
+
+        <!-- Button to initiate the hack -->
+        <button id="startButton" class="btn animate-button">Initiate Hack</button>
+
+            <!-- Progress bar container (initially hidden) -->
+        <div id="progressContainer" class="progress-container" style="display: none;">
+            <div id="progressBar" class="progress-bar"></div>
+            <span id="progressTime" class="progress-time"></span>
+        </div>
+        
+        <!-- Submission link (initially hidden) -->
+            <a
+            id="submitButton"
+            class="btn submission-btn"
+            href="flag submission/index.html"
+            style="display: none;"
+            >
+            Submit Flag
+            </a>
+
+
+    
+
+        <!-- Logs (no extra box) -->
+        <div class="log">
+          <p class="log-line" style="animation-delay: 1s;">&gt; Initializing...</p>
+          <p class="log-line" style="animation-delay: 1.2s;">&gt; Scanning network...</p>
+          <p class="log-line" style="animation-delay: 1.4s;">&gt; Bypassing firewalls...</p>
+          <p class="log-line" style="animation-delay: 1.6s;">&gt; Accessing mainframe...</p>
+          <p class="log-line" style="animation-delay: 1.8s;">&gt; Ready for infiltration...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal for Tool Hints -->
+  <div id="toolHintsModal" class="modal">
+    <div class="modal-content">
+      <span class="close"></span>
+      <h2>Tool Hints</h2>
+      <div class="modal-text">
+        <h3>Level 0 Tool Riddle</h3>
+        <p>
+          In a canvas of colors where secrets reside,<br>
+          A silent message is hidden, quietly inside.<br>
+          At first glance, it's just a picture to view,<br>
+          But beneath the surface, a mystery waits for you.<br>
+          With a clever tool to peel back the disguise,<br>
+          Search through the layers where the hidden truth lies.<br>
+          What ancient art embeds secrets in plain sight?<br>
+          Uncover the enigma and bring it to light!
+        </p>
+
+        <h3>Level 1 Tool Riddle - Part 1</h3>
+        <p>
+          In the digital kitchen, I don my hat with pride,<br>
+          Mixing cryptic recipes where hidden secrets reside.<br>
+          I slice through data with tools both sharp and keen,<br>
+          Transforming jumbled code into flavors yet unseen.<br>
+          A dash of base here, a pinch of hex there,<br>
+          I blend and convert with meticulous care.<br>
+          Who am I, whose crafted recipes lighten the load?<br>
+          Decode my culinary riddle, and watch the mystery unfold!
+        </p>
+
+        <h3>Level 1 Tool Riddle - Part 2</h3>
+        <p>
+          In the vast digital maze, every email whispers a hidden tale,<br>
+          A secret left by a sender behind an obscure address trail.<br>
+          When mysteries linger within the realm of mail,<br>
+          A silent tool emerges to reverse the veil.<br>
+          With a keen lookup that unravels each coded mark,<br>
+          It traces the origin of every email in the dark.<br>
+          Who is the unseen detective that reveals the sender’s lore,<br>
+          And turns every mail mystery into an open door?
+        </p>
+
+        <h3>Level 2 Tool Riddle</h3>
+        <p>
+          In the web's vast maze where secrets reside,<br>
+          I wield a trusty list as my guide.<br>
+          Knocking on every door, I persist and try,<br>
+          Revealing hidden paths where elusive files lie.<br>
+          Through every directory and uncharted space,<br>
+          I uncover the secrets with relentless pace.<br>
+          Who am I, the tireless seeker, bold and stout,<br>
+          Unmasking every secret file without a doubt?
+        </p>
+
+        <h3>Level 3 Tool Riddle</h3>
+        <p>
+          In the labyrinth of the browser, a hidden realm awaits,<br>
+          Where code whispers secrets behind the site's gates.<br>
+          A tool lies in wait, just a keystroke away,<br>
+          Revealing every element in a quiet display.<br>
+          Delve into the script where mysteries reside,<br>
+          For the flag is concealed where the secrets hide.<br>
+          What is this portal that unveils the unseen,<br>
+          Turning coded whispers into clues so keen?
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div class="container">
-    <h2 >Flag Verification Portal</h2>
-    <h3 style="font-weight: 400;"">Please enter the flag to verify your submission</h3>
-    <form id="textForm">
-      <input type="text" id="inputText" placeholder="Enter flag here" required />
-      <button type="submit" class="btn">Verify Flag</button>
-    </form>
-    <!-- Popup messages (hidden by default) -->
-    <div id="popup" class="message success" style="display: none;">
-      <strong>Success!</strong> The entered flag matches the target text. The Google Redeem Code is <span style="font-family: monospace;">54SSDXZ54</span>
-    </div>
-    <div id="errorPopup" class="message error" style="display: none;">
-      <strong>Error!</strong> The entered flag does not match the target text.
-    </div>
-  </div>
-
-  <footer>Made with ❤️ by Jaskaran</footer>
   <script src="script.js"></script>
 </body>
 </html>
