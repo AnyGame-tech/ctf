@@ -1,3 +1,8 @@
+@font-face {
+  font-family: hackerFont;
+  src: url(SDGlitch_Demo.ttf);
+}
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -53,7 +58,14 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-h2, h3 {
+h2 {
+  color: #4ade80;
+  letter-spacing:3px;
+  font-family:hackerFont;
+  margin-bottom: 20px;
+}
+
+h3 {
   color: #4ade80;
   margin-bottom: 20px;
 }
